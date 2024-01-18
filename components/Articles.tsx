@@ -33,7 +33,7 @@ const Articles = ({ data }: { data: any }) => {
             />
           ) : (
             <Image
-              src={article.urlToImage}
+              src={article.image}
               alt="Headline Image"
               className="rounded-lg"
               width={800}
@@ -41,7 +41,7 @@ const Articles = ({ data }: { data: any }) => {
             />
           )}
           <div className="flex flex-col gap-6 items-center">
-            <div className="text-xl font-bold mt-2">{article.title}</div>
+            <div className="text-xl font-bold mt-2">{article.headline}</div>
             <div>{article.description}</div>
             <Link
               href={article.url}
@@ -51,12 +51,7 @@ const Articles = ({ data }: { data: any }) => {
               See the full story
             </Link>
             <div className="flex gap-2 text-sm text-gray-500">
-              <span>{article.author}</span>
-              <span>.</span>
-              <span>{article.publishedAt}</span>
-            </div>
-            <div className="text-gray-500 text-sm">
-              <span>Source:</span> <span>{article.source?.name ?? "ESPN"}</span>
+              <span>{article.published}</span>
             </div>
           </div>
         </div>

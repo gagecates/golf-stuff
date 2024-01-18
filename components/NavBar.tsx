@@ -7,11 +7,11 @@ import UserAvatar from "./UserAvatar";
 
 const menuItems = [
   {
-    name: "Top Headlines",
+    name: "College Football",
     navigateTo: "/",
   },
   {
-    name: "Football",
+    name: "Pro Football",
     navigateTo: "/football",
   },
   {
@@ -19,8 +19,12 @@ const menuItems = [
     navigateTo: "/basketball",
   },
   {
-    name: "Golf",
-    navigateTo: "/golf",
+    name: "Baseball",
+    navigateTo: "/baseball",
+  },
+  {
+    name: "Hockey",
+    navigateTo: "/hockey",
   },
 ];
 

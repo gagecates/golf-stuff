@@ -9,26 +9,28 @@ const useDataFetch = (url: string) => {
 
   const mapData = (rawData: any) => {
     // map the raw data to array of objects containing required information. Filter for only images or YouTube videos.
-    return rawData
-      .filter(
-        (article: any) =>
-          article.urlToImage || article.source.name === "YouTube"
-      )
-      .map((article: any) => {
-        const copy = { ...article };
-        if (article.source.name === "YouTube") {
-          copy.videoId = article.url.split("=")[1];
-        }
-        return copy;
-      });
+    return (
+      rawData
+        // .filter(
+        //   (article: any) =>
+        //     article.urlToImage || article.source.name === "YouTube"
+        // )
+        .map((article: any) => {
+          const copy = { ...article };
+          // if (article.source.name === "YouTube") {
+          //   copy.videoId = article.url.split("=")[1];
+          // }
+          copy.image = article.images?.[0]?.url ?? "";
+          copy.url = article.links?.web?.href ?? "";
+          return copy;
+        })
+    );
   };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(
-          `${url}&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
-        );
+        const res = await fetch(url);
         const rawData = await res.json();
         console.log("raw data", rawData);
         const articles = rawData.articles ?? [];

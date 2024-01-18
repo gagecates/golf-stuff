@@ -5,8 +5,8 @@ import ErrorView from "@/components/ErrorView";
 import SkeletonLoader from "@/components/SkeletonLoader";
 import useDataFetch from "@/hooks/useDataFetch";
 
-const Golf = () => {
-  const url = "https://newsapi.org/v2/everything?q=golf";
+const Hockey = () => {
+  const url = "http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/news";
   const { data, loading, error } = useDataFetch(url);
 
   if (error) {
@@ -20,4 +20,4 @@ const Golf = () => {
   );
 };
 
-export default Golf;
+export default Hockey;

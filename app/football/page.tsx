@@ -6,8 +6,7 @@ import SkeletonLoader from "@/components/SkeletonLoader";
 import useDataFetch from "@/hooks/useDataFetch";
 
 const Football = () => {
-  const url =
-    "https://newsapi.org/v2/top-headlines?country=us&category=sports&q=football";
+  const url = "http://site.api.espn.com/apis/site/v2/sports/football/nfl/news";
   const { data, loading, error } = useDataFetch(url);
 
   if (error) {
