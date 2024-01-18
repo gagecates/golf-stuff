@@ -8,7 +8,7 @@ import Articles from "@/components/Articles";
 export default function Home() {
   // shows college football
   const url =
-    "http://site.api.espn.com/apis/site/v2/sports/football/college-football/news";
+    "https://site.api.espn.com/apis/site/v2/sports/football/college-football/news";
   const { data, loading, error } = useDataFetch(url);
 
   if (error) {

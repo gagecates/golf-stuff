@@ -6,7 +6,7 @@ import SkeletonLoader from "@/components/SkeletonLoader";
 import useDataFetch from "@/hooks/useDataFetch";
 
 const Hockey = () => {
-  const url = "http://site.api.espn.com/apis/site/v2/sports/hockey/nhl/news";
+  const url = "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/news";
   const { data, loading, error } = useDataFetch(url);
 
   if (error) {

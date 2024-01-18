@@ -7,7 +7,7 @@ import useDataFetch from "@/hooks/useDataFetch";
 
 const Basketball = () => {
   const url =
-    "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/news";
+    "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/news";
   const { data, loading, error } = useDataFetch(url);
 
   if (error) {
