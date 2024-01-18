@@ -20,7 +20,10 @@ const Articles = ({ data }: { data: any }) => {
   return (
     <>
       {data.map((article: any) => (
-        <div className="flex flex-col max-w-2xl items-center bg-white rounded-xl p-4 w-full">
+        <div
+          key={`article-${article.publishedAt}`}
+          className="flex flex-col max-w-2xl items-center bg-white rounded-xl p-4 w-full"
+        >
           {article.videoId ? (
             <YouTube
               videoId={article.videoId}
