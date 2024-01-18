@@ -1,12 +1,13 @@
 "use client";
 
+import Articles from "@/components/Articles";
 import ErrorView from "@/components/ErrorView";
 import SkeletonLoader from "@/components/SkeletonLoader";
 import useDataFetch from "@/hooks/useDataFetch";
-import Articles from "@/components/Articles";
 
-export default function Home() {
-  const url = "https://newsapi.org/v2/top-headlines?country=us&category=sports";
+const Football = () => {
+  const url =
+    "https://newsapi.org/v2/top-headlines?country=us&category=sports&q=football";
   const { data, loading, error } = useDataFetch(url);
 
   if (error) {
@@ -18,4 +19,6 @@ export default function Home() {
       {loading ? <SkeletonLoader /> : <Articles data={data} />}
     </main>
   );
-}
+};
+
+export default Football;

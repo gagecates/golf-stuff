@@ -25,3 +25,20 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.skeleton-paragraph {
+  background: linear-gradient(
+      to right,
+      #eeeeee 20%,
+      #c2bfbf 50%,
+      #eeeeee 80%
+  );
+  background-size: 200% 100%;
+  animation: loading 2s infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
